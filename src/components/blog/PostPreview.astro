@@ -1,0 +1,44 @@
+---
+import type { HTMLTag, Polymorphic } from 'astro/types'
+import type { CollectionEntry } from 'astro:content'
+
+import FormattedDate from '../FormattedDate.astro'
+
+type Props<Tag extends HTMLTag> = Polymorphic<{ as: Tag }> & {
+	post: CollectionEntry<'post'>
+	withDesc?: boolean
+}
+
+const { as: Tag = 'div', post, withDesc = false } = Astro.props
+const postDate = post.data.updatedDate ?? post.data.publishDate
+---
+
+<li class='flex flex-col gap-2 sm:flex-row sm:gap-x-4 [&_q]:basis-full'>
+	<FormattedDate class='min-w-[120px]' date={postDate} />
+
+	<Tag>
+      <a
+        data-astro-prefetch
+        href={`/proyectos/${post.slug}/`}
+        class='transition-all hover:text-muted-foreground hover:font-bold'
+      >
+        <div class="flex flex-row gap-1 items-center">
+
+        {post.data.title}
+        <div class='w-3 h-3' aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13.828 10.172C13.0779 9.42213 12.0607 9.00087 11 9.00087C9.93934 9.00087 8.92211 9.42213 8.172 10.172L4.172 14.172C3.78996 14.541 3.48523 14.9824 3.27559 15.4704C3.06596 15.9584 2.95561 16.4833 2.951 17.0144C2.94638 17.5455 3.04759 18.0722 3.24871 18.5638C3.44984 19.0554 3.74685 19.502 4.12242 19.8776C4.49799 20.2532 4.9446 20.5502 5.43618 20.7513C5.92777 20.9524 6.45449 21.0536 6.98561 21.049C7.51672 21.0444 8.0416 20.9341 8.52962 20.7244C9.01763 20.5148 9.45901 20.2101 9.828 19.828L10.93 18.727M10.172 13.828C10.9221 14.5779 11.9393 14.9992 13 14.9992C14.0607 14.9992 15.0779 14.5779 15.828 13.828L19.828 9.82801C20.5566 9.0736 20.9598 8.06319 20.9507 7.01441C20.9416 5.96562 20.5209 4.96237 19.7793 4.22074C19.0376 3.4791 18.0344 3.05843 16.9856 3.04932C15.9368 3.0402 14.9264 3.44338 14.172 4.17201L13.072 5.27201" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        </div>
+      </a>
+      
+		{
+			withDesc && (
+				<p class='line-clamp-3 block text-sm italic text-muted-foreground'>
+					{post.data.description}
+				</p>
+			)
+		}
+	</Tag>
+</li>
