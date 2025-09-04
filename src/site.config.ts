@@ -30,7 +30,7 @@ export const menuLinks: Array<{ title: string; path: string }> = [
 		path: '/'
 	},
 	{
-		title: 'Proyectos',
+		title: 'Galería',
 		path: '/proyectos/'
 	}
 ]
