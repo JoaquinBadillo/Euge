@@ -79,7 +79,7 @@ const projects = [
   },
 ];
 
-function experienceTime(startDate, endDate = new Date()) {
+function experienceTime(startDate: any, endDate = new Date(): any) {
   const start = new Date(startDate);
   const end = endDate ? new Date(endDate) : new Date();
 
