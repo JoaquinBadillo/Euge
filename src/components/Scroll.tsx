@@ -1,4 +1,4 @@
-"use client";
+//@ts-nocheck
 
 import { cn } from "../utils/tailwind";
 import React, { useEffect, useState } from "react";

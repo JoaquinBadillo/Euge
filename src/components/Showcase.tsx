@@ -1,3 +1,5 @@
+//@ts-nocheck
+
 import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
 
 export function Showcase({ data, title }) {

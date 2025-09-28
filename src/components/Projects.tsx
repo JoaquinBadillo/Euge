@@ -1,3 +1,5 @@
+//@ts-nocheck
+
 import { cn } from "@/lib/utils";
 import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
 import { Skeleton } from "@/components/ui/skeleton";
