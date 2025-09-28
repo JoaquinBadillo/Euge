@@ -5,11 +5,11 @@ import {Image} from 'astro:assets'
 import PageLayout from '../layouts/BaseLayout.astro'
 import Section from '../components/Section.astro'
 import Card from '../components/Card.astro'
-import ProjectCard from '../components/ProjectCard.astro'
 import Label from '../components/Label.astro'
 import SkillLayout from '../components/SkillLayout.astro'
 import Button from '../components/Button.astro'
 import {Projects} from '@/components/Projects'
+import Silk from '@/components/Silk.jsx'
 
 import about from '../assets/EugenioBalestra.jpg'
 
@@ -86,8 +86,8 @@ function experienceTime(startDate: any, endDate: any) {
 
 ---
 
-<PageLayout meta={{ title: 'Home' }}>
-	<div class='flex w-full flex-col gap-y-10'>
+<PageLayout meta={{ title: 'Home' }}> 
+  <div class='flex w-full flex-col gap-y-10'>
 		<section class='flex flex-col items-center gap-y-7'>
 			<Image
 				src={about}
@@ -96,10 +96,10 @@ function experienceTime(startDate: any, endDate: any) {
 				loading='eager'
 			/>
 
-			<div class='flex flex-col items-center gap-y-4'>
+      <div class='flex flex-col items-center gap-y-4'>
 				<h1 class='text-3xl font-bold'>Eugenio Balestra</h1>
-				
-				<div class='flex flex-wrap justify-center gap-x-7 gap-y-3'>
+        
+        <div class='flex flex-wrap justify-center gap-x-7 gap-y-3'>
 					<Label title='ARQ'>
 						<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='h-5 w-5' slot='icon'
 							><path
