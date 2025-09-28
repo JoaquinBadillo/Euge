@@ -8,7 +8,7 @@ export const Projects = ({items}: any) => (
     <BentoGrid className="max-w-4xl mx-auto">
       {
         items.map((item, i) => (
-            <a href={`/proyectos/${item.slug}`} className="contents">
+            <a href={`Euge/proyectos/${item.slug}`} className="contents">
               <BentoGridItem
                 key={i}
                 title={item.heading}
