@@ -21,6 +21,9 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+      
+      - name: Avoid Jekyll
+        run: mkdir dist && touch dist/.nojekyl
 
       - name: Build Astro
         run: npm astro build
