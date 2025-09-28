@@ -14,7 +14,7 @@ import react from "@astrojs/react";
 // https://astro.build/config
 export default defineConfig({
   site: 'https://joaquinbadillo.github.io',
-  base: 'Euge',
+  base: '/Euge',
   integrations: [expressiveCode(expressiveCodeOptions), tailwind({
     applyBaseStyles: false
   }), sitemap(), mdx(), icon(), react()],
